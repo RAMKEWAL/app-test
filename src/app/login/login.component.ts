@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.signin.controls['password_md5'].setValue(Md5.hashStr(this.signin.get('password_md5')));
-    console.log(this.signin.value);
     this.userService.login(this.signin.value).subscribe(res => {
       console.log(res);
     }, error => {
