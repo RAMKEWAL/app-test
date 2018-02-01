@@ -1,0 +1,19 @@
+<div class="form-container">
+  <form [formGroup]="signin" (ngSubmit)="onSubmit()">
+    <div class="inner-container">
+      <mat-card>
+        <mat-form-field>
+          <input matInput placeholder="Username" formControlName="username">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="password" placeholder="Password" formControlName="password">
+        </mat-form-field>
+        
+        <re-captcha formControlName="captcha" placeholder=""></re-captcha>
+        
+        <button type="submit" mat-button mat-raised-button color="primary"  [disabled]="signin.invalid">Login</button>
+      </mat-card>
+    </div>
+  </form>
+</div>
